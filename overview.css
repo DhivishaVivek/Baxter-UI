@@ -1,0 +1,126 @@
+@font-face {
+  font-family: 'HCLTech Roobert';
+  src: url('../fonts/Roobert-Medium.ttf') format('truetype');
+}
+ 
+body {
+  font-family: 'HCLTech Roobert', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: #f3f6fb;
+  color: #1b1f3a;
+  display: flex;
+  flex-direction: column;
+}
+ 
+nav {
+  background: linear-gradient(90deg, #2c3e91 10%, #3f4cc0 25%, #5a36b8 50%, #8145b3 75%, #9e4ca5 88%, #b868a2 95%);
+  color: white;
+  padding: 20px 0;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+ 
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 40px;
+}
+ 
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+ 
+nav ul li a:hover {
+  color: #ffdfff;
+  border-bottom: 2px solid #ffdfff;
+}
+ 
+ 
+main.main-content {
+  flex: 1;
+  padding: 100px 20px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+ 
+.dashboard-container {
+  background: linear-gradient(#444d9f, #8b8ff2);
+  color: white;
+  border-radius: 12px;
+  padding: 30px;
+  width: 800px;
+  max-width: 95%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+ 
+.dashboard-container h2 {
+  margin-bottom: 30px;
+}
+ 
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+ 
+.card {
+  background: #ffffff20;
+  border: 1px solid #ffffff40;
+  border-radius: 10px;
+  padding: 20px;
+  transition: transform 0.3s;
+}
+ 
+.card:hover {
+  transform: scale(1.03);
+  background: #ffffff30;
+}
+ 
+.card h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+ 
+.card p {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+ 
+
+ footer {
+  background: linear-gradient(90deg, #2c3e91 10%, #3f4cc0 25%, #5a36b8 50%, #8145b3 75%, #9e4ca5 88%, #b868a2 95%);
+  color: white;
+  text-align: center;
+  padding: 14px 0;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  border-top: 1px solid #ffffff20;
+  margin-top: auto;
+}
+ 
+@media screen and (max-width: 600px) {
+  .dashboard-container {
+    padding: 20px;
+  }
+ 
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+ 

@@ -1,0 +1,189 @@
+@font-face {
+  font-family: 'HCLTech Roobert';
+  src: url('../fonts/Roobert-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+ 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'HCLTech Roobert', sans-serif;
+  background: #f3f6fb;
+  color: #1b1f3a;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+ 
+
+.header-container {
+  background: linear-gradient(90deg, #2c3e91 10%, #3f4cc0 25%, #5a36b8 50%, #8145b3 75%, #9e4ca5 88%, #b868a2 95%);
+  color: white;
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  border-bottom: 1px solid #ffffff20;
+}
+.icon {
+  color: white;
+  font-size: 29px;
+  margin-bottom: 10px;
+}
+ 
+.brand-title {
+  font-size: 40px; 
+  font-weight: 700;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+ 
+nav {
+  margin-right: auto;
+}
+ 
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 20px; 
+}
+ 
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+  padding: 6px 0;
+}
+ 
+nav ul li a:hover {
+  color: #ffdfff;
+  border-bottom: 2px solid #ffdfff;
+}
+ 
+
+main {
+  flex: 1;
+}
+ 
+.diamond-layout {
+  display: grid;
+  grid-template-areas:
+    "overview overview"
+    "upload reports"
+    "chat chat";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 40px;
+  padding: 60px 20px;
+  justify-items: center;
+  align-items: center;
+}
+ 
+#overview {
+  grid-area: overview;
+}
+#upload {
+  grid-area: upload;
+}
+#reports {
+  grid-area: reports;
+}
+#chat {
+  grid-area: chat;
+}
+ 
+
+.box-section {
+  background: linear-gradient(#444d9f, #8b8ff2);
+  border: 2px solid #b6cfff;
+  padding: 30px 20px;
+  border-radius: 20px;
+  width: 220px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease-in-out, background 0.4s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+ 
+.box-section:hover {
+  transform: scale(1.05) rotate(1deg);
+  background: linear-gradient(#4c6cff, #9aa7f0); 
+}
+ 
+.box-section h2 {
+  font-size: 18px; 
+  margin: 12px 0 6px 0;
+  color: white;
+}
+ 
+.box-section p {
+  font-size: 14px;
+  color: white;
+  margin: 0;
+}
+ 
+
+footer {
+  background: linear-gradient(90deg, #2c3e91 10%, #3f4cc0 25%, #5a36b8 50%, #8145b3 75%, #9e4ca5 88%, #b868a2 95%);
+  color: white;
+  text-align: center;
+  padding: 14px 0;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  border-top: 1px solid #ffffff20;
+  margin-top: auto;
+}
+ 
+@media screen and (max-width: 768px) {
+  .diamond-layout {
+    grid-template-areas:
+      "overview"
+      "upload"
+      "reports"
+      "chat";
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+ 
+  .box-section {
+    width: 90%;
+  }
+ 
+  nav ul {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+ 
+  .brand-title {
+    position: static;
+    transform: none;
+    margin: auto;
+  }
+ 
+  .header-container {
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    padding: 16px;
+  }
+}
+ nav ul line a{
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
