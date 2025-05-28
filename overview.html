@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Overview Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/overview.css') }}" />
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="/#dashboard">Dashboard</a></li>
+      <li><a href="/overview">Overview</a></li>
+      <li><a href="/upload">Upload</a></li>
+      <li><a href="/reports">Reports</a></li>
+      <li><a href="/chat">Chat</a></li>
+    </ul>
+  </nav>
+ 
+  <main class="main-content">
+    <div class="dashboard-container">
+      <h2>Real-Time Overview</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Total Uploads</h3>
+          <p id="total-uploads">--</p>
+        </div>
+        <div class="card">
+          <h3>Successful Uploads</h3>
+          <p id="success-uploads">--</p>
+        </div>
+        <div class="card">
+          <h3>Failed Uploads</h3>
+          <p id="failed-uploads">--</p>
+        </div>
+        <div class="card">
+          <h3>Last Upload Time</h3>
+          <p id="last-upload">--</p>
+        </div>
+      </div>
+    </div>
+  </main>
+ 
+  <footer>
+    <p>Privacy Policy | Terms & Conditions | 2025 AIRA DHF Portal</p>
+  </footer>
+ 
+  <script>
+    // Placeholder JS — we'll connect to Flask backend soon
+    document.getElementById('total-uploads').textContent = '128';
+    document.getElementById('success-uploads').textContent = '125';
+    document.getElementById('failed-uploads').textContent = '3';
+    document.getElementById('last-upload').textContent = '2025-05-27 15:23';
+  </script>
+</body>
+</html>
+ 

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reports</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/reports.css') }}" />
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="/#dashboard">Dashboard</a></li>
+      <li><a href="/overview">Overview</a></li>
+      <li><a href="/upload">Upload</a></li>
+      <li><a href="/reports">Reports</a></li>
+      <li><a href="/chat">Chat</a></li>
+    </ul>
+  </nav>
+ 
+  <div class="report-box">
+    <h1>Uploaded Files</h1>
+    <ul class="file-list">
+      {% for file in files %}
+      <li><a href="{{ url_for('download_file', filename=file) }}">{{ file }}</a></li>
+      {% endfor %}
+    </ul>
+    <a href="{{ url_for('upload_files') }}">← Upload More Files</a>
+              
+  </div>
+ 
+  <footer id="contact">
+    <p>Privacy Policy | Terms & Conditions | 2025 AIRA DHF Portal</p>
+  </footer>
+</body>
+</html>

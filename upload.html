@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>File Upload Tool</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/upload.css') }}" />
+</head>
+<body>
+  <header class="header-container">
+   
+    <nav>
+      <ul>
+         <li><a href="/#dashboard">Dashboard</a></li>
+      <li><a href="/overview">Overview</a></li>
+      <li><a href="/upload">Upload</a></li>
+      <li><a href="/reports">Reports</a></li>
+      <li><a href="/chat">Chat</a></li>
+      
+      </ul>
+    </nav>
+  </header>
+  
+
+  <main class="main-content">
+    <div class="upload-container">
+      <h2>Upload Folder or Files</h2>
+      <div id="drop-area" class="drop-area">
+        <p>Drag & Drop your folder/files here or 
+          <span id="browseFiles" class="browse-link">Browse Files</span> / 
+          <span id="browseFolders" class="browse-link">Browse Folders</span>
+        </p>
+        <input type="file" id="fileInput" multiple style="display:none;" />
+        <input type="file" id="folderInput" multiple webkitdirectory directory style="display:none;" />
+      </div>
+      <div id="file-list-container">
+        <div id="file-list" class="file-list"></div>
+      </div>
+      
+
+      <button id="uploadBtn" class="upload-btn" disabled>Upload</button>
+      
+      <div id="notification" style="margin-top: 15px; font-weight: bold;"></div>
+    </div>
+  </main>
+
+  <footer id="contact">
+    <p>Privacy Policy | Terms & Conditions | 2025 AIRA DHF Portal</p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/upload.js') }}"></script>
+</body>
+</html>

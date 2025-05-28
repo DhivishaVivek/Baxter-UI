@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AIRA DHF</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header class="header-container">
+    <h1 class="brand-title">Aira DHF</h1>
+    <nav>
+      <ul>
+        <li><a href="#overview"> Overview</a></li>        
+        <li><a href="#upolod"> Upload</a></li>
+        <li><a href="#reports"> Reports</a></li>
+        <li><a href="#chat">Chat</a></li>
+      </ul>
+    </nav>
+  </header>
+ 
+  <main class="diamond-layout">
+    <section id="overview" class="box-section">
+      <i class="fas fa-globe icon"></i>
+      <h2>
+      <nav>
+        <ul>
+         <line><a href= "{{ url_for('overview') }}">Overview</a></line> 
+        </ul>
+      </nav> 
+    </h2>
+      <p>Quick access to real-time stats and system metrics.</p>
+    </section>
+ 
+    <section id="upload" class="box-section">
+      <i class="fas fa-file-upload icon"></i>
+      <h2>
+      <nav>
+        <ul>
+          <line><a href="{{ url_for('upload_files') }}">Upload</a></line>
+        </ul>
+      </nav> 
+    </h2>
+      <p>Securely upload and manage documents.</p>
+    </section>
+ 
+    <section id="reports" class="box-section">
+      <i class="fas fa-chart-line icon"></i>
+      <h2>
+      <nav>
+        <ul>
+          <line><a href="{{ url_for('show_reports') }}">Reports</a></line>
+        </ul>
+      </nav> 
+    </h2>
+      <p>Generate and review analytical reports.</p>
+    </section>
+ 
+    <section id="chat" class="box-section">
+      <i class="fas fa-comments icon"></i>
+      <h2>
+      <nav>
+        <ul>
+         <line><a href="{{ url_for('chat') }}">Chat</a></line>
+        </ul>
+      </nav> 
+    </h2>  
+      <p>Communicate with the care team in real time.</p>
+    </section>
+  </main>
+ 
+  <footer>
+    <p>Privacy Policy | Terms & Conditions | Contact Us</p>
+  </footer>
+</body>
+</html>
+ 

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chat</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}" />
+</head>
+
+<body>
+
+  <nav>
+    <ul>
+      
+      <li><a href="{{ url_for('index') }}">Dashboard</a></li>
+      <li><a href="/overview">Overview</a></li>      
+      <li><a href="{{ url_for('upload_files') }}">Upload</a></li>
+      <li><a href="{{ url_for('show_reports') }}">Reports</a></li>
+      <li><a href="{{ url_for('chat') }}">Chat</a></li>
+    </ul>
+</nav>
+
+
+  <div class="container">
+    <div class="chat-box">
+      <h2>Chat With Us</h2>
+      <div class="chat-window" id="chat-window"></div>
+      <form id="chat-form">
+        <input type="text" id="chat-input" placeholder="Type a message..." required />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('chat-form');
+    const input = document.getElementById('chat-input');
+    const chatWindow = document.getElementById('chat-window');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const userMsg = input.value.trim();
+      if (userMsg !== '') {
+        appendBubble(userMsg, 'user');
+        input.value = '';  
+
+        try {
+          const response = await fetch('{{ url_for("chat_respond") }}', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ message: userMsg }),
+          });
+
+          const data = await response.json();
+          const botMessage = data.response || "Sorry, I couldn't understand that.";
+          appendBubble(botMessage, 'bot');
+        } catch (error) {
+          console.error('Error:', error);
+          appendBubble("Sorry, there was an error. Please try again later.", 'bot');
+        }
+      }
+    });
+
+    function appendBubble(message, type) {
+      const bubble = document.createElement('div');
+      bubble.className = type === 'user' ? 'chat-bubble user' : 'chat-bubble bot';
+      bubble.textContent = message;
+      chatWindow.appendChild(bubble);
+      chatWindow.scrollTop = chatWindow.scrollHeight;  
+    }
+  </script>
+
+  <footer id="contact">
+    <p>Privacy Policy | Terms & Conditions | 2025 AIRA DHF Portal</p>
+  </footer>
+
+</body>
+</html>
